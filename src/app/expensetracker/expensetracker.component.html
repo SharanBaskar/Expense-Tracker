@@ -1,0 +1,57 @@
+<!-- expensetracker.component.html -->
+
+<div class="container">
+    <!-- Logo and Menu Options -->
+    <header>
+      <img class="logo" src="https://happay.com/blog/wp-content/uploads/sites/12/2022/08/non-operating-expenses.png" alt="Company Logo">
+      <h2 style="font-size: xx-large; text-align: justify;"> Expense Tracker</h2>
+      <nav *ngIf="isLoggedIn">
+        <ul>
+          <li><a (click)="home()">Home</a></li>
+          <li><a routerLink="/about">About</a></li>
+          <li><a (click)="logout()">Logout</a></li>
+          <li><a routerLink="/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+  
+    <!-- Login Form -->
+    <main *ngIf="!isLoggedIn">
+      <form (ngSubmit)="login()">
+        <h1 style="font-family: fantasy; text-align: center;">Login</h1>
+        <label for="username">Username:</label>
+        <input id="username" type="text" [(ngModel)]="username" name="username" required>
+  
+        <label for="password">Password:</label>
+        <input id="password" type="password" [(ngModel)]="password" name="password" required>
+  
+        <button type="submit">Login</button>
+      </form>
+    </main>
+  
+    <!-- Expense Tracker Content -->
+    <div *ngIf="isLoggedIn">
+      <h2>Expense Tracker</h2>
+  
+      <!-- Form to add new expenses -->
+      <form (ngSubmit)="addExpense()">
+        <label for="expense-name">Expense Name:</label>
+        <input id="expense-name" type="text" [(ngModel)]="newExpense.name" name="expenseName" required>
+  
+        <label for="expense-amount">Expense Amount:</label>
+        <input id="expense-amount" type="number" [(ngModel)]="newExpense.amount" name="expenseAmount" required>
+  
+        <button type="submit">Add Expense</button>
+      </form>
+  
+      <!-- Display total expenses -->
+      <p class="total-expenses">Total Expenses: {{ getTotalExpenses() }}</p>
+  
+      <!-- List of expenses -->
+      <ul class="expenses-list">
+        <li *ngFor="let expense of expenses">
+          {{ expense.name }} - {{ expense.amount }}
+        </li>
+      </ul>
+    </div>
+</div>

@@ -1,0 +1,120 @@
+/* expensetracker.component.css */
+
+/* Container styles */
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
+  }
+  
+  /* Header styles */
+  header {
+    overflow: hidden;
+    padding: 10px 0;
+  }
+  
+  header .logo {
+    height: 100px;
+    float: left;
+    margin-right: 10px;
+  }
+  
+  header nav {
+    float: right;
+  }
+  
+  header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header nav ul li {
+    display: inline-block;
+    margin-left: 10px;
+  }
+  
+  header nav ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  header nav ul li a:hover {
+    color: #4CAF50;
+  }
+  
+  /* Main content styles */
+  main {
+    clear: both;
+  }
+  
+  /* Form styles */
+  form {
+    margin-bottom: 20px;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #666;
+  }
+  
+  form input[type="text"],
+  form input[type="number"],
+  form input[type="password"] {
+    width: calc(100% - 16px);
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  form button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Total expenses styles */
+  p.total-expenses {
+    margin-bottom: 16px;
+    font-weight: bold;
+  }
+  
+  /* List styles */
+  ul.expenses-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  ul.expenses-list li {
+    background-color: #fff;
+    padding: 8px;
+    margin-bottom: 4px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  ul.expenses-list li:hover {
+    background-color: #f9f9f9;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  }
+  
