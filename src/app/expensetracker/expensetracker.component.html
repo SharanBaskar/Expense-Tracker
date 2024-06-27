@@ -8,9 +8,8 @@
       <nav *ngIf="isLoggedIn">
         <ul>
           <li><a (click)="home()">Home</a></li>
-          <li><a routerLink="/about">About</a></li>
+          <li><a (click)="expensess()">Expense</a></li>
           <li><a (click)="logout()">Logout</a></li>
-          <li><a routerLink="/contact">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -26,24 +25,11 @@
         <input id="password" type="password" [(ngModel)]="password" name="password" required>
   
         <button type="submit">Login</button>
-      </form>
+      </form> 
     </main>
-  
+    
     <!-- Expense Tracker Content -->
     <div *ngIf="isLoggedIn">
-      <h2>Expense Tracker</h2>
-  
-      <!-- Form to add new expenses -->
-      <form (ngSubmit)="addExpense()">
-        <label for="expense-name">Expense Name:</label>
-        <input id="expense-name" type="text" [(ngModel)]="newExpense.name" name="expenseName" required>
-  
-        <label for="expense-amount">Expense Amount:</label>
-        <input id="expense-amount" type="number" [(ngModel)]="newExpense.amount" name="expenseAmount" required>
-  
-        <button type="submit">Add Expense</button>
-      </form>
-  
       <!-- Display total expenses -->
       <p class="total-expenses">Total Expenses: {{ getTotalExpenses() }}</p>
   
@@ -54,4 +40,19 @@
         </li>
       </ul>
     </div>
+    <div *ngIf="isexpenses">
+      <!-- Form to add new expenses -->
+       <form (ngSubmit)="addExpense()">
+         <label for="expense-name">Expense Name:</label>
+         <input id="expense-name" type="text" [(ngModel)]="newExpense.name" name="expenseName" required>
+   
+         <label for="expense-amount">Expense Amount:</label>
+         <input id="expense-amount" type="number" [(ngModel)]="newExpense.amount" name="expenseAmount" required>
+   
+         <button type="submit">Add Expense</button>
+       </form>
+     </div>
+
+   
 </div>
+   
