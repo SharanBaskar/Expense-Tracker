@@ -16,6 +16,7 @@ interface Expense {
 export class ExpenseComponent {
   logoUrl: string = 'assets/logo.png'; // Path to your company logo image
   isLoggedIn: boolean = false;
+  isexpenses: boolean = false;
   username: string = '';
   password: string = '';
   newExpense: Expense = { name: '', amount: 0 };
@@ -46,7 +47,8 @@ export class ExpenseComponent {
 
   logout() {
     this.isLoggedIn = false;
-    this.expenses = []; // Clear current user's expenses
+    this.isexpenses = false;
+    this.expenses = []; 
     this.router.navigateByUrl('/login');
   }
 
@@ -66,8 +68,10 @@ export class ExpenseComponent {
   getTotalExpenses(): number {
     return this.expenses.reduce((total, expense) => total + expense.amount, 0);
   }
+  expensess(){
+    this.isexpenses = true;
+  }
   home(){
-    return "Welcome to this webpage";
+    this.isexpenses = false;
   }
 }
-
